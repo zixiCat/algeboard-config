@@ -33,7 +33,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: link new shields
-        run: ln -s ${GITHUB_WORKSPACE}/config/ zmk/app/boards/shields/algeboard
+        run: ln -sfn "${GITHUB_WORKSPACE}/config/" zmk/app/boards/shields/algeboard
       - name: West Build (ALGEBOARD Left)
         run: west build -s zmk/app -b  nrfmicro_13 -- -DSHIELD=algeboard_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: ALGEBOARD Left Kconfig file
